@@ -11,3 +11,13 @@
     @apply text-2xl font-bold;
   }
 }
+
+@layer components {
+  .active-link {
+    @apply bg-blue-600 text-white p-3 w-[100px] flex justify-center items-center rounded-md cursor-pointer;
+  }
+
+  .inactive-link {
+    @apply p-3 w-[100px] flex justify-center items-center rounded-md cursor-pointer;
+  }
+}

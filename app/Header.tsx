@@ -9,7 +9,7 @@ const Header = () => {
   const { isClick, toggle } = useToggleStore();
 
   return (
-    <div className="w-full max-sm:p-5 p-3">
+    <div className="w-full bg-slate-200 max-sm:p-5 p-3">
       <div className="w-full mb-5 flex flex-row justify-between items-center md:hidden">
         <h1>
           <span className="text-blue-600">Sachin</span> Lakshan
