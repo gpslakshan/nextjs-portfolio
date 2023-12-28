@@ -1,5 +1,11 @@
+import Hero from "./components/Hero";
+
 const Home = () => {
-  return <div className="bg-slate-400 h-screen">Home</div>;
+  return (
+    <div className="h-screen">
+      <Hero />
+    </div>
+  );
 };
 
 export default Home;

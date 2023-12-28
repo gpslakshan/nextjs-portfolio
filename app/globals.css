@@ -20,4 +20,8 @@
   .inactive-link {
     @apply p-3 w-[100px] flex justify-center items-center rounded-md cursor-pointer;
   }
+
+  .btn-primary {
+    @apply bg-black text-white py-2 px-4 rounded-md text-sm cursor-pointer;
+  }
 }

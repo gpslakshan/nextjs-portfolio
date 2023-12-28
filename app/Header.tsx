@@ -9,7 +9,7 @@ const Header = () => {
   const { isClick, toggle } = useToggleStore();
 
   return (
-    <div className="w-full bg-slate-200 max-sm:p-5 p-3">
+    <div className="w-full bg-slate-50 max-sm:p-5 p-3">
       <div className="w-full mb-5 flex flex-row justify-between items-center md:hidden">
         <h1>
           <span className="text-blue-600">Sachin</span> Lakshan
@@ -32,9 +32,7 @@ const Header = () => {
           <IoMail />
           <div className="font-bold text-sm">sachinlakshan04@gmail.com</div>
         </div>
-        <button className="bg-black text-white py-2 px-4 rounded-md text-sm">
-          Download CV
-        </button>
+        <button className="btn-primary">Download CV</button>
       </div>
     </div>
   );
