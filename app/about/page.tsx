@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="p-6 max-w-[1000px] mx-auto">
+    <section className="p-6 max-w-[1000px] mx-auto h-screen">
       <h1 className="text-4xl mb-5 lg:mt-[40px] lg:mb-[30px] text-blue-600">
         About Me
       </h1>
@@ -40,7 +40,7 @@ const About = () => {
         Join me on this exciting journey where technology meets innovation, and
         let's explore the limitless possibilities that lie ahead.
       </p>
-    </div>
+    </section>
   );
 };
 
