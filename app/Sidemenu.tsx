@@ -19,11 +19,12 @@ const Sidemenu = () => {
       } md:w-[300px] lg:w-[400px] z-50 h-screen shadow-lg flex flex-col items-center justify-around`}
     >
       <div className="flex flex-col items-center space-y-2">
-        <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] relative">
+        <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px]">
           <Image
             src={profilepic}
             alt="Sachin's Portfolio Picture"
-            className="object-cover rounded-full"
+            fill
+            className="rounded-full object-cover"
           />
         </div>
         <div className="lg:text-lg font-bold">Sachin Lakshan</div>
