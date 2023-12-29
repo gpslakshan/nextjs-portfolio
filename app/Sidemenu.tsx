@@ -16,7 +16,7 @@ const Sidemenu = () => {
     <aside
       className={`bg-white max-sm:w-[180px] ${
         !isClick && "max-sm:hidden"
-      } md:w-[300px] lg:w-[400px] z-10 h-screen shadow-lg flex flex-col items-center justify-around`}
+      } md:w-[300px] lg:w-[400px] z-50 h-screen shadow-lg flex flex-col items-center justify-around`}
     >
       <div className="flex flex-col items-center space-y-2">
         <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] relative">
