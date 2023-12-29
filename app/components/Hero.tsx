@@ -3,7 +3,7 @@ import heroImage from "@/public/images/hero.png";
 
 const Hero = () => {
   return (
-    <div className="p-3 bg-slate-50 h-screen lg:flex lg:flex-row-reverse lg:items-center lg:space-x-3">
+    <section className="p-3 bg-slate-50 h-screen lg:flex lg:flex-row-reverse lg:items-center lg:space-x-3">
       <div className="w-full flex justify-center lg:w-1/2 xl:w-1/3">
         <Image src={heroImage} alt="hero image" height={400} />
       </div>
@@ -24,7 +24,7 @@ const Hero = () => {
           <button className="btn-primary">Let's Talk</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
