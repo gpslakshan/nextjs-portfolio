@@ -23,10 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} overflow-hidden`}>
+      <body className={`${poppins.variable}`}>
         <div className="w-full flex flex-row relative">
           <Sidemenu />
-          <main className="w-full max-sm:absolute max-sm:left-0 max-sm:right-0">
+          <main className="w-full md:pl-[230px] xl:pl-[350px]">
             <Header />
             {children}
           </main>

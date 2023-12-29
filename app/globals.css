@@ -13,6 +13,14 @@
 }
 
 @layer components {
+  .side-menu {
+    @apply bg-white fixed top-0 left-0 h-screen max-sm:w-[180px] md:w-[230px] xl:w-[350px] z-50  shadow-lg;
+  }
+
+  .side-menu-container {
+    @apply h-screen flex flex-col items-center justify-around;
+  }
+
   .active-link {
     @apply bg-blue-600 text-white p-3 w-[100px] flex justify-center items-center rounded-md cursor-pointer;
   }
