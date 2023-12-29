@@ -1,13 +1,8 @@
+import { ProjectData } from "@/types";
 import ProjectCard from "../components/ProjectCard";
 import { client } from "../lib/sanity";
 
-interface ProjectData {
-  name: string;
-  description: string;
-  link: string;
-  _id: string;
-  imageUrl: string;
-}
+export const revalidate = 10; // revalidate this page every 10 seconds
 
 async function getProjects() {
   const query = `*[ _type == "project"]{
