@@ -4,6 +4,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
 import useToggleStore from "../store";
+import Link from "next/link";
 
 const Header = () => {
   const { isClick, toggle } = useToggleStore();
@@ -11,9 +12,11 @@ const Header = () => {
   return (
     <div className="w-full bg-slate-50 max-sm:p-5 p-3">
       <div className="w-full mb-5 flex flex-row justify-between items-center md:hidden">
-        <h1>
-          <span className="text-blue-600">Sachin</span> Lakshan
-        </h1>
+        <Link href="/">
+          <h1>
+            <span className="text-blue-600">Sachin</span> Lakshan
+          </h1>
+        </Link>
         <CiMenuFries
           color="black"
           size="25"

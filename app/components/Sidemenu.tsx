@@ -8,9 +8,11 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaMedium } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+import { usePathname } from "next/navigation";
 
 const Sidemenu = () => {
-  const { isClick } = useToggleStore();
+  const currentPath = usePathname();
+  const { isClick, toggle } = useToggleStore();
 
   return (
     <aside className={`${!isClick && "max-sm:hidden"} side-menu`}>
@@ -28,19 +30,48 @@ const Sidemenu = () => {
         </div>
         <div>
           <ul className="">
-            <li className="active-link">
+            <li
+              className={currentPath === "/" ? "active-link" : "inactive-link"}
+              onClick={() => toggle()}
+            >
               <Link href="/">Home</Link>
             </li>
-            <li className="inactive-link">
+            <li
+              className={
+                currentPath.includes("/about") ? "active-link" : "inactive-link"
+              }
+              onClick={() => toggle()}
+            >
               <Link href="/about">About</Link>
             </li>
-            <li className="inactive-link">
+            <li
+              className={
+                currentPath.includes("/skills")
+                  ? "active-link"
+                  : "inactive-link"
+              }
+              onClick={() => toggle()}
+            >
               <Link href="/skills">Skills</Link>
             </li>
-            <li className="inactive-link">
+            <li
+              className={
+                currentPath.includes("/projects")
+                  ? "active-link"
+                  : "inactive-link"
+              }
+              onClick={() => toggle()}
+            >
               <Link href="/projects">Projects</Link>
             </li>
-            <li className="inactive-link">
+            <li
+              className={
+                currentPath.includes("/contact")
+                  ? "active-link"
+                  : "inactive-link"
+              }
+              onClick={() => toggle()}
+            >
               <Link href="/contact">Contact</Link>
             </li>
           </ul>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import heroImage from "@/public/images/hero.png";
 import "@/app/animations.css";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -27,8 +28,12 @@ const Home = () => {
             together.
           </p>
           <div className="w-full flex flex-row max-lg:justify-center space-x-2 mt-5">
-            <button className="btn-primary">Projects</button>
-            <button className="btn-primary">Let's Talk</button>
+            <Link href="/projects" className="z-20">
+              <button className="btn-primary">Projects</button>
+            </Link>
+            <Link href="/contact" className="z-20">
+              <button className="btn-primary">Let's Talk</button>
+            </Link>
           </div>
         </div>
       </div>
