@@ -7,10 +7,13 @@ export const revalidate = 10; // revalidate this page every 10 seconds
 async function getProjects() {
   const query = `*[ _type == "project"]{
     name,
-      description,
-      link,
-      _id,
-      "imageUrl":image.asset->url
+    description,
+    _id,
+    "imageUrl":image.asset->url,
+    githubURL,
+    projectURL,
+    technologies,
+    deployed
   }`;
 
   const data = await client.fetch(query);

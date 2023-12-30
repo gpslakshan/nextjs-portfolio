@@ -19,9 +19,25 @@ export default {
       title: 'Image',
     },
     {
-      name: 'link',
+      name: 'githubURL',
       type: 'string',
-      title: 'Link',
+      title: 'GitHubURL',
+    },
+    {
+      name: 'projectURL',
+      type: 'string',
+      title: 'ProjectURL',
+    },
+    {
+      name: 'deployed',
+      type: 'boolean',
+      title: 'Deployed',
+    },
+    {
+      name: 'technologies',
+      type: 'array',
+      title: 'Technologies',
+      of: [{type: 'string'}],
     },
   ],
 }
