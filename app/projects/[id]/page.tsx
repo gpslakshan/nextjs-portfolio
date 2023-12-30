@@ -34,9 +34,21 @@ const ProjectDetailsPage = async ({ params }: Props) => {
 
   return (
     <div className="min-h-screen max-w-[1000px] p-6 mx-auto">
-      <h1 className="mb-2">{project.name}</h1>
-      <div className="w-full flex flex-col items-center">
-        <div className="w-full h-[170px] md:w-[540px] md:h-[300px] lg:w-[650px] lg:h-[400px] xl:w-[850px] xl:h-[500px] mb-2 relative">
+      <div className="flex flex-row justify-between items-center mb-2">
+        <h1 className="text-3xl">{project.name}</h1>
+        <div className="flex flex-row space-x-5">
+          <Link href={project.githubURL} target="_blank">
+            <FaGithub size="20" />
+          </Link>
+          {project.deployed && (
+            <Link href={project.projectURL} target="_blank">
+              <FaExternalLinkAlt size="20" />
+            </Link>
+          )}
+        </div>
+      </div>
+      <div className="w-full flex flex-col items-center mb-2">
+        <div className="w-full h-[170px] md:w-[540px] md:h-[300px] lg:w-[650px] lg:h-[400px] xl:w-[850px] xl:h-[500px] relative">
           <Image
             src={project.imageUrl}
             alt={project.name}
@@ -52,22 +64,6 @@ const ProjectDetailsPage = async ({ params }: Props) => {
           <li key={t}>{t}</li>
         ))}
       </ul>
-      <div className="flex flex-row space-x-3 mb-2">
-        <div className="font-bold">Github URL -&gt; </div>
-        <Link href={project.githubURL} target="_blank">
-          <FaGithub size="20" />
-        </Link>
-      </div>
-      <div className="flex flex-row space-x-3 mb-2">
-        {project.deployed && (
-          <div className="font-bold">Deployed URL -&gt; </div>
-        )}
-        {project.deployed && (
-          <Link href={project.projectURL || ""} target="_blank">
-            <FaExternalLinkAlt />
-          </Link>
-        )}
-      </div>
     </div>
   );
 };
