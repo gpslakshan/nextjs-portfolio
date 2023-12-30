@@ -5,6 +5,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
 
+export const revalidate = 10; // revalidate this page every 10 seconds
+
 interface Props {
   params: { id: string };
 }
