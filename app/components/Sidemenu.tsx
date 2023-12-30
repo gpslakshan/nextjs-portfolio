@@ -10,11 +10,9 @@ import { FaMedium } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { sidebarMenuLinks } from "@/constants";
-import { usePathname } from "next/navigation";
 
 const Sidemenu = () => {
-  const pathname = usePathname();
-  const [activeRoute, setActiveRoute] = useState<string>("/home");
+  const [activeRoute, setActiveRoute] = useState<string>("home");
   const { isClick, toggle } = useToggleStore();
 
   function handleClick(route: string): void {
@@ -33,7 +31,7 @@ const Sidemenu = () => {
         element.offsetTop <= scrollPosition &&
         element.offsetTop + element.offsetHeight > scrollPosition
       ) {
-        setActiveRoute("/" + section.sectionId);
+        setActiveRoute(section.sectionId);
       }
     }
   }
@@ -62,46 +60,56 @@ const Sidemenu = () => {
         </div>
         <div>
           <ul className="">
-            <li
-              className={
-                activeRoute === "/home" ? "active-link" : "inactive-link"
-              }
-              onClick={() => handleClick("/")}
-            >
-              <Link href="#home">Home</Link>
-            </li>
-            <li
-              className={
-                activeRoute == "/about" ? "active-link" : "inactive-link"
-              }
-              onClick={() => handleClick("/about")}
-            >
-              <Link href="#about">About</Link>
-            </li>
-            <li
-              className={
-                activeRoute == "/skills" ? "active-link" : "inactive-link"
-              }
-              onClick={() => handleClick("/skills")}
-            >
-              <Link href="#skills">Skills</Link>
-            </li>
-            <li
-              className={
-                activeRoute == "/projects" ? "active-link" : "inactive-link"
-              }
-              onClick={() => handleClick("/projects")}
-            >
-              <Link href="#projects">Projects</Link>
-            </li>
-            <li
-              className={
-                activeRoute == "/contact" ? "active-link" : "inactive-link"
-              }
-              onClick={() => handleClick("/contact")}
-            >
-              <Link href="#contact">Contact</Link>
-            </li>
+            <Link href="#home">
+              <li
+                className={
+                  activeRoute === "home" ? "active-link" : "inactive-link"
+                }
+                onClick={() => handleClick("home")}
+              >
+                Home
+              </li>
+            </Link>
+            <Link href="#about">
+              <li
+                className={
+                  activeRoute == "about" ? "active-link" : "inactive-link"
+                }
+                onClick={() => handleClick("about")}
+              >
+                About
+              </li>
+            </Link>
+            <Link href="#skills">
+              <li
+                className={
+                  activeRoute == "skills" ? "active-link" : "inactive-link"
+                }
+                onClick={() => handleClick("skills")}
+              >
+                Skills
+              </li>
+            </Link>
+            <Link href="#projects">
+              <li
+                className={
+                  activeRoute == "projects" ? "active-link" : "inactive-link"
+                }
+                onClick={() => handleClick("projects")}
+              >
+                Projects
+              </li>
+            </Link>
+            <Link href="#contact">
+              <li
+                className={
+                  activeRoute == "contact" ? "active-link" : "inactive-link"
+                }
+                onClick={() => handleClick("contact")}
+              >
+                Contact
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="space-y-5 lg:hidden">
