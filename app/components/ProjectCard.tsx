@@ -11,12 +11,12 @@ interface Props {
 const ProjectCard = ({ projectData }: Props) => {
   return (
     <div className="shadow-lg p-3 bg-slate-200 rounded-lg flex flex-col justify-center items-center w-full">
-      <div className="mb-2">
+      <div className="mb-1 w-full relative h-[170px]">
         <Image
           src={projectData.imageUrl}
           alt={projectData.name}
-          width={300}
-          height={170}
+          fill
+          className="object-cover"
         />
       </div>
       <div className="mb-2">{projectData.name}</div>
