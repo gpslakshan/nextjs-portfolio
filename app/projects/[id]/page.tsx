@@ -33,13 +33,15 @@ const ProjectDetailsPage = async ({ params }: Props) => {
   return (
     <div className="min-h-screen max-w-[1000px] p-6 mx-auto">
       <h1 className="mb-2">{project.name}</h1>
-      <div className="w-full h-[170px] mb-2 relative">
-        <Image
-          src={project.imageUrl}
-          alt={project.name}
-          fill
-          className="object-contain"
-        />
+      <div className="w-full flex flex-col items-center">
+        <div className="w-full h-[170px] md:w-[540px] md:h-[300px] lg:w-[650px] lg:h-[400px] xl:w-[850px] xl:h-[500px] mb-2 relative">
+          <Image
+            src={project.imageUrl}
+            alt={project.name}
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
       <p className="mb-6">{project.description}</p>
       <div className="font-bold">Techonologies used:</div>
