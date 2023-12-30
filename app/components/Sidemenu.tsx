@@ -8,11 +8,43 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaMedium } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+import { useState, useEffect } from "react";
+import { sidebarMenuLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 
 const Sidemenu = () => {
-  const currentPath = usePathname();
+  const pathname = usePathname();
+  const [activeRoute, setActiveRoute] = useState<string>("/home");
   const { isClick, toggle } = useToggleStore();
+
+  function handleClick(route: string): void {
+    setActiveRoute(route);
+    toggle();
+  }
+
+  function handleScroll(): void {
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    for (const section of sidebarMenuLinks) {
+      const element = document.getElementById(section.sectionId);
+
+      if (
+        element &&
+        element.offsetTop <= scrollPosition &&
+        element.offsetTop + element.offsetHeight > scrollPosition
+      ) {
+        setActiveRoute("/" + section.sectionId);
+      }
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <aside className={`${!isClick && "max-sm:hidden"} side-menu`}>
@@ -31,48 +63,44 @@ const Sidemenu = () => {
         <div>
           <ul className="">
             <li
-              className={currentPath === "/" ? "active-link" : "inactive-link"}
-              onClick={() => toggle()}
+              className={
+                activeRoute === "/home" ? "active-link" : "inactive-link"
+              }
+              onClick={() => handleClick("/")}
             >
-              <Link href="/">Home</Link>
+              <Link href="#home">Home</Link>
             </li>
             <li
               className={
-                currentPath.includes("/about") ? "active-link" : "inactive-link"
+                activeRoute == "/about" ? "active-link" : "inactive-link"
               }
-              onClick={() => toggle()}
+              onClick={() => handleClick("/about")}
             >
-              <Link href="/about">About</Link>
+              <Link href="#about">About</Link>
             </li>
             <li
               className={
-                currentPath.includes("/skills")
-                  ? "active-link"
-                  : "inactive-link"
+                activeRoute == "/skills" ? "active-link" : "inactive-link"
               }
-              onClick={() => toggle()}
+              onClick={() => handleClick("/skills")}
             >
-              <Link href="/skills">Skills</Link>
+              <Link href="#skills">Skills</Link>
             </li>
             <li
               className={
-                currentPath.includes("/projects")
-                  ? "active-link"
-                  : "inactive-link"
+                activeRoute == "/projects" ? "active-link" : "inactive-link"
               }
-              onClick={() => toggle()}
+              onClick={() => handleClick("/projects")}
             >
-              <Link href="/projects">Projects</Link>
+              <Link href="#projects">Projects</Link>
             </li>
             <li
               className={
-                currentPath.includes("/contact")
-                  ? "active-link"
-                  : "inactive-link"
+                activeRoute == "/contact" ? "active-link" : "inactive-link"
               }
-              onClick={() => toggle()}
+              onClick={() => handleClick("/contact")}
             >
-              <Link href="/contact">Contact</Link>
+              <Link href="#contact">Contact</Link>
             </li>
           </ul>
         </div>
