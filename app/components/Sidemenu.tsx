@@ -11,6 +11,8 @@ import { BiLogoGmail } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { sidebarMenuLinks } from "@/constants";
 
+window.scrollTo(0, 0);
+
 const Sidemenu = () => {
   const [activeRoute, setActiveRoute] = useState<string>("home");
   const { isClick, toggle } = useToggleStore();

@@ -8,3 +8,10 @@ export interface ProjectData {
   deployed: boolean;
   technologies: string[];
 }
+
+export interface SkillData {
+  name: string;
+  _id: string;
+  imageUrl: string;
+  categories: string[];
+}

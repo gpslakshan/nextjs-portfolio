@@ -36,7 +36,7 @@ const About = () => {
         you'll find a curated collection of projects that reflect my dedication
         to creating meaningful and user-centric solutions.
       </p>
-      <p className="mb-3 xl:text-lg">
+      <p className="xl:text-lg">
         Join me on this exciting journey where technology meets innovation, and
         let's explore the limitless possibilities that lie ahead.
       </p>
