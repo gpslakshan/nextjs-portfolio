@@ -1,6 +1,6 @@
 import { ProjectData } from "@/types";
 import ProjectCard from "../components/ProjectCard";
-import { client } from "../lib/sanity";
+import { sanity } from "../lib/sanity";
 
 export const revalidate = 10; // revalidate this page every 10 seconds
 
@@ -16,7 +16,7 @@ async function getProjects() {
     deployed
   }`;
 
-  const data = await client.fetch(query);
+  const data = await sanity.fetch(query);
 
   return data;
 }
@@ -25,7 +25,7 @@ const Projects = async () => {
   const data: ProjectData[] = await getProjects();
 
   return (
-    <section className="p-6 max-w-[1000px] mx-auto h-screen">
+    <section className="p-6 max-w-[1000px] mx-auto min-h-screen">
       <h1 className="text-4xl mb-5 lg:mt-[40px] lg:mb-[30px] text-blue-600">
         Projects
       </h1>

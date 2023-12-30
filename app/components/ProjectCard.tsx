@@ -12,12 +12,14 @@ const ProjectCard = ({ projectData }: Props) => {
   return (
     <div className="shadow-lg p-3 bg-slate-200 rounded-lg flex flex-col justify-center items-center w-full">
       <div className="mb-1 w-full relative h-[170px]">
-        <Image
-          src={projectData.imageUrl}
-          alt={projectData.name}
-          fill
-          className="object-cover"
-        />
+        <Link href={`projects/${projectData._id}`}>
+          <Image
+            src={projectData.imageUrl}
+            alt={projectData.name}
+            fill
+            className="object-cover"
+          />
+        </Link>
       </div>
       <div className="mb-2">{projectData.name}</div>
       <div className="flex flex-row items-center space-x-3">
