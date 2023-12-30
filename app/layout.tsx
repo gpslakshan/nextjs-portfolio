@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${poppins.variable}`}>
         <div className="w-full flex flex-row relative">
           <Sidemenu />
-          <main className="w-full md:pl-[230px] xl:pl-[350px] bg-slate-50">
+          <main className="w-full md:pl-[180px] lg:pl-[230px] xl:pl-[350px] bg-slate-50">
             <Header />
             {children}
           </main>
