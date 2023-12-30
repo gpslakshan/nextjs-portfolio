@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import useToggleStore from "./store";
+import useToggleStore from "../store";
 import Link from "next/link";
 import profilepic from "@/public/images/profilepic.jpeg";
 import { FaLinkedin } from "react-icons/fa";

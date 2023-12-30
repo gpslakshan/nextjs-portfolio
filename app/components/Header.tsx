@@ -3,7 +3,7 @@
 import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
-import useToggleStore from "./store";
+import useToggleStore from "../store";
 
 const Header = () => {
   const { isClick, toggle } = useToggleStore();
