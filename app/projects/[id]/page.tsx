@@ -51,13 +51,15 @@ const ProjectDetailsPage = async ({ params }: Props) => {
         ))}
       </ul>
       <div className="flex flex-row space-x-3 mb-2">
-        <div>Github URL: </div>
+        <div className="font-bold">Github URL -&gt; </div>
         <Link href={project.githubURL} target="_blank">
           <FaGithub size="20" />
         </Link>
       </div>
       <div className="flex flex-row space-x-3 mb-2">
-        {project.deployed && <div>Deployed URL: </div>}
+        {project.deployed && (
+          <div className="font-bold">Deployed URL -&gt; </div>
+        )}
         {project.deployed && (
           <Link href={project.projectURL || ""} target="_blank">
             <FaExternalLinkAlt />
