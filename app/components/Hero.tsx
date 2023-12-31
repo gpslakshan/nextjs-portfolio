@@ -28,10 +28,10 @@ const Hero = () => {
             together.
           </p>
           <div className="w-full flex flex-row max-lg:justify-center space-x-2 mt-5">
-            <Link href="/projects" className="z-20">
+            <Link href="#projects" className="z-20">
               <button className="btn-primary">Projects</button>
             </Link>
-            <Link href="/contact" className="z-20">
+            <Link href="#contact" className="z-20">
               <button className="btn-primary">Let's Talk</button>
             </Link>
           </div>
