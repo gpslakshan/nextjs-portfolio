@@ -14,7 +14,7 @@
 
 @layer components {
   .side-menu {
-    @apply bg-white fixed top-0 left-0 h-screen max-sm:w-[180px] md:w-[180px] lg:w-[230px] xl:w-[350px] z-50  shadow-lg;
+    @apply bg-white fixed top-0 left-0 h-screen max-sm:w-[180px] sm:w-[180px] md:w-[180px] lg:w-[230px] xl:w-[350px] z-50  shadow-lg;
   }
 
   .side-menu-container {
