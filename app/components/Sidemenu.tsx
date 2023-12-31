@@ -44,6 +44,11 @@ const Sidemenu = () => {
     };
   }, []);
 
+  // scroll to top on reload
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
+
   return (
     <aside className={`${!isClick && "max-sm:hidden"} side-menu`}>
       <div className="side-menu-container">
