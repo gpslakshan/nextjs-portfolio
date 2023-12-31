@@ -32,4 +32,12 @@
   .btn-primary {
     @apply bg-black text-white py-2 px-4 rounded-md text-sm cursor-pointer;
   }
+
+  .input {
+    @apply w-full p-3 focus:outline-blue-600;
+  }
+
+  .textarea {
+    @apply w-full p-3 focus:outline-blue-600 resize-none;
+  }
 }
