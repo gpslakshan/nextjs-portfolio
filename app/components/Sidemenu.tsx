@@ -50,7 +50,7 @@ const Sidemenu = () => {
   }, []);
 
   return (
-    <aside className={`${!isClick && "max-sm:hidden"} side-menu`}>
+    <aside className={`${!isClick && "hidden md:block"} side-menu`}>
       <div className="side-menu-container">
         <div className="flex flex-col items-center space-y-2">
           <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px]">
