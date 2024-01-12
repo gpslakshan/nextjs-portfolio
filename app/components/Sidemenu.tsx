@@ -117,18 +117,40 @@ const Sidemenu = () => {
             </Link>
           </ul>
         </div>
-        <div className="space-y-5 lg:hidden">
-          <BiLogoGmail size="20" />
-          <FaLinkedin size="20" />
-          <FaGithub size="20" />
-          <FaMedium size="20" />
+        <div className="lg:hidden">
+          <Link href="mailto:sachinlakshan04@gmail.com">
+            <BiLogoGmail size="20" className="mb-3" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/sachin-lakshan/"
+            target="_blank"
+          >
+            <FaLinkedin size="20" className="mb-3" />
+          </Link>
+          <Link href="https://github.com/gpslakshan" target="_blank">
+            <FaGithub size="20" className="mb-3" />
+          </Link>
+          <Link href="https://medium.com/@gpslakshan" target="_blank">
+            <FaMedium size="20" className="mb-3" />
+          </Link>
         </div>
         <div className="max-lg:hidden px-4">
           <div className="flex flex-row space-x-5 mb-2 justify-center">
-            <BiLogoGmail size="20" />
-            <FaLinkedin size="20" />
-            <FaGithub size="20" />
-            <FaMedium size="20" />
+            <Link href="mailto:sachinlakshan04@gmail.com">
+              <BiLogoGmail size="20" />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/sachin-lakshan/"
+              target="_blank"
+            >
+              <FaLinkedin size="20" />
+            </Link>
+            <Link href="https://github.com/gpslakshan" target="_blank">
+              <FaGithub size="20" />
+            </Link>
+            <Link href="https://medium.com/@gpslakshan" target="_blank">
+              <FaMedium size="20" />
+            </Link>
           </div>
           <div className="text-sm text-center">
             Copyright © {new Date().getFullYear()} Sachin Lakshan. All rights

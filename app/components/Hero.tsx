@@ -5,8 +5,11 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen overflow-hidden z-10" id="home">
-      <div className="p-3 h-screen lg:flex lg:flex-row-reverse lg:items-center lg:space-x-3">
+    <section
+      className="relative md:h-screen overflow-hidden z-10 bg-slate-50"
+      id="home"
+    >
+      <div className="p-3 md:h-screen lg:flex lg:flex-row-reverse lg:items-center lg:space-x-3">
         <div className="w-full flex justify-center lg:w-1/2 xl:w-1/3">
           <Image
             src={heroImage}
@@ -27,7 +30,7 @@ const Hero = () => {
             Let's turn ideas into reality and shape the future of technology
             together.
           </p>
-          <div className="w-full flex flex-row max-lg:justify-center space-x-2 mt-5">
+          <div className="w-full flex flex-row max-lg:justify-center space-x-2 mt-5 mb-16 sm:mb-0">
             <Link href="#projects" className="z-20">
               <button className="btn-primary">Projects</button>
             </Link>

@@ -7,7 +7,7 @@ interface Props {
 
 const SkillCard = ({ skillData }: Props) => {
   return (
-    <div className="shadow-lg p-3 bg-slate-200 rounded-lg flex flex-col justify-center items-center w-full">
+    <div className="shadow-lg p-3 bg-slate-50 rounded-lg flex flex-col justify-center items-center w-full">
       <div className="mb-2 w-full relative h-[170px]">
         <Image
           src={skillData.imageUrl}
