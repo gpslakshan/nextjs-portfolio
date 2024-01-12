@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Sidemenu from "./components/Sidemenu";
 import Header from "./components/Header";
+import Providers from "./providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
           <Sidemenu />
           <main className="w-full md:pl-[180px] lg:pl-[230px] xl:pl-[350px] ">
             <Header />
-            {children}
+            <Providers>{children}</Providers>
           </main>
         </div>
       </body>

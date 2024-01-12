@@ -6,37 +6,34 @@ import { FaMedium } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { FieldValues, useForm } from "react-hook-form";
 import { z } from "zod";
+import contactSchema from "../api/send-email/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import axios from "axios";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const Contact = () => {
-  const schema = z.object({
-    name: z
-      .string({ required_error: "Name is required." })
-      .min(3, { message: "Name must be at least 3 characters." }),
-    email: z
-      .string({ required_error: "Email is required." })
-      .email({ message: "Please provide a valid email address." }),
-    subject: z
-      .string({ required_error: "Subject is required." })
-      .min(3, { message: "Subject must be at least 3 characters." }),
-    message: z
-      .string({ required_error: "Message is required." })
-      .min(3, { message: "Message must be at least 3 characters." }),
-  });
-
-  type FormData = z.infer<typeof schema>;
+  type FormData = z.infer<typeof contactSchema>;
+  const [isSubmitting, setSubmitting] = useState<boolean>(false);
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: zodResolver(contactSchema) });
 
-  const onSubmit = (data: FieldValues) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data: FieldValues) => {
+    setSubmitting(true);
+    const resSubmit = await axios.post("/api/send-email", data);
+    if (resSubmit.data.mesg == "success") {
+      toast.success("Message sent!");
+      reset();
+    } else {
+      toast.error("Message is not delivered. Something went wrong!");
+    }
+    setSubmitting(false);
   };
 
   return (
@@ -128,6 +125,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   className="btn-primary font-bold bg-blue-600"
+                  disabled={isSubmitting}
                 >
                   Submit
                 </button>
