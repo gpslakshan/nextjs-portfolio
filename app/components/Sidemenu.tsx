@@ -53,7 +53,7 @@ const Sidemenu = () => {
     <aside className={`${!isClick && "hidden md:block"} side-menu`}>
       <div className="side-menu-container">
         <div className="flex flex-col items-center space-y-2">
-          <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px]">
+          <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] mt-[50px] md:mt-0">
             <Image
               src={profilepic}
               alt="Sachin's Portfolio Picture"
