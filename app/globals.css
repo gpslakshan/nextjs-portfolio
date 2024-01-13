@@ -14,11 +14,11 @@
 
 @layer components {
   .side-menu {
-    @apply bg-white fixed top-0 left-0 h-screen max-sm:w-[180px] sm:w-[180px] md:w-[180px] lg:w-[230px] xl:w-[350px] z-50  shadow-lg;
+    @apply bg-white fixed top-0 left-0 bottom-0 min-h-screen max-sm:w-[180px] sm:w-[180px] md:w-[180px] lg:w-[230px] xl:w-[350px] z-50  shadow-lg overflow-y-scroll;
   }
 
   .side-menu-container {
-    @apply h-screen flex flex-col items-center justify-around;
+    @apply min-h-screen flex flex-col items-center justify-around;
   }
 
   .active-link {
