@@ -15,6 +15,8 @@ async function getSkills() {
   return data;
 }
 
+export const dynamic = "force-dynamic";
+
 const Skills = async () => {
   const data: SkillData[] = await getSkills();
 

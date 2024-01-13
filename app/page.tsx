@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 
-export const revalidate = 10; // revalidate page every 10 seconds
+export const dynamic = "force-dynamic";
 
 const Home = () => {
   return (

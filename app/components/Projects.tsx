@@ -19,6 +19,8 @@ async function getProjects() {
   return data;
 }
 
+export const dynamic = "force-dynamic";
+
 const Projects = async () => {
   const data: ProjectData[] = await getProjects();
 
