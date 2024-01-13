@@ -6,11 +6,11 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section
-      className="relative md:h-screen overflow-hidden z-10 bg-slate-50"
+      className="relative lg:h-screen overflow-hidden z-10 bg-slate-50"
       id="home"
     >
-      <div className="p-3 md:h-screen lg:flex lg:flex-row-reverse lg:items-center lg:space-x-3">
-        <div className="w-full flex justify-center lg:w-1/2 xl:w-1/3">
+      <div className="p-3 lg:h-screen md:flex md:flex-row-reverse md:items-center md:space-x-3">
+        <div className="w-full flex justify-center md:w-1/2 lg:w-1/2 xl:w-1/3">
           <Image
             src={heroImage}
             alt="hero image"
@@ -18,7 +18,7 @@ const Hero = () => {
             className="z-20"
           />
         </div>
-        <div className="max-lg:mt-5 lg:pl-4 lg:w-1/2 xl:w-2/3">
+        <div className="max-lg:mt-5 lg:pl-4 md:w-1/2 lg:w-1/2 xl:w-2/3">
           <p className="text-[36px] leading-[40px] md:text-[45px] md:leading-[48px] lg:text-[60px] lg:leading-[60px] max-lg:text-center font-medium">
             Hi! I'm Sachin. A{" "}
             <span className="text-blue-600 font-semibold">
