@@ -18,8 +18,12 @@ Welcome to my Next.js portfolio project! This dynamic and visually appealing por
 ## Technologies Used
 
 - Next.js
-- React
-- HTML/CSS
+- Sanity
+- TailwindCSS
+- Zustand
+- React Hook Form
+- React Email / Resend
+- Zod
 
 ## Author
 
